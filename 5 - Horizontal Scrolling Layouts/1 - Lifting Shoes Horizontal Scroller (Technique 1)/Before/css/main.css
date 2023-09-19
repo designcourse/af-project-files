@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background-color: #FFE3E0;
+  overflow-x: hidden;
+}
+
+a.logo {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  font-weight: bold;
+  position: fixed;
+  margin: 8em;
+  z-index: 999;
+}
+
+.mask {
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  width: 300vw;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+}
+section main {
+  padding: 8em;
+  flex: 1;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+}
+section main h1 {
+  text-transform: uppercase;
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+}
+section main p {
+  width: 70%;
+  font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+  line-height: 2rem;
+}
+section .right-col {
+  background: #FB4C26;
+  flex: 0.7;
+  width: 100%;
+  height: 100vh;
+}
+section .red {
+  background: red;
+}
+section .dark {
+  background: rgb(22, 22, 22);
+}
+section img {
+  position: absolute;
+  width: 40%;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+.progress {
+  height: 4px;
+  background: #E7C4BF;
+  width: 30%;
+  position: fixed;
+  bottom: 8em;
+  left: 8em;
+  z-index: 99999;
+}
+.progress .inner {
+  background: #FB4C26;
+  height: 100%;
+  transform-origin: left;
+  width: 100%;
+  transform: scaleX(0);
+}/*# sourceMappingURL=main.css.map */

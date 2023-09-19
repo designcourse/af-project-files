@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #2864FF;
+  color: white;
+}
+
+h1 {
+  font-family: "Bebas Neue";
+  font-size: 30rem;
+  text-align: center;
+  opacity: 0.1;
+  margin: 18% 0 0 0;
+}
+
+.progress {
+  background-color: #A1BCFF;
+  height: 3px;
+  width: 0;
+  position: absolute;
+  top: 50%;
+}/*# sourceMappingURL=main.css.map */

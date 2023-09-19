@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+section {
+  height: 100vh;
+  position: relative;
+}
+section .animated-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+section .animated-wrapper .animate {
+  flex: 1;
+}
+section .animated-wrapper .animate:nth-of-type(1) {
+  background-color: rgb(120, 180, 197);
+}
+section .animated-wrapper .animate:nth-of-type(2) {
+  background-color: rgb(120, 197, 159);
+}
+section .animated-wrapper .animate:nth-of-type(3) {
+  background-color: rgb(120, 120, 197);
+}
+section .animated-wrapper .animate:nth-of-type(4) {
+  background-color: rgb(165, 120, 197);
+}
+section .animated-wrapper .animate:nth-of-type(5) {
+  background-color: rgb(197, 120, 170);
+}
+section .animated-wrapper .animate:nth-of-type(6) {
+  background-color: rgb(197, 169, 120);
+}
+
+video {
+  width: 50vw;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+svg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+svg mask {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+}
+svg text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1vw;
+  letter-spacing: -0.2rem;
+  transform: translate(40%, 55%);
+}
+svg rect {
+  fill: white;
+  -webkit-mask: url(#mask);
+          mask: url(#mask);
+}/*# sourceMappingURL=main.css.map */

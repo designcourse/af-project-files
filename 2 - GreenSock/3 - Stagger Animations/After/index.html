@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From and To</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <section>
+        <div class="mask">
+            <img src="/img1.jpg" alt="Abstract image">
+            <p>living</p>
+        </div>
+        <div class="mask">
+            <img src="/img2.jpg" alt="Abstract image">
+            <p>in</p>
+        </div>
+        <div class="mask">
+            <img src="/img3.jpg" alt="Abstract image">
+            <p class="white">abstraction</p>
+        </div>
+    </section>
+
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        gsap.set('img', {
+            yPercent: -100
+        })
+        gsap.set('p', {
+            opacity: 0
+        })
+
+        gsap.to('img', {
+            yPercent: 0,
+            stagger: .1,
+            duration: 2,
+            scale: 1.3,
+            ease: "power4.out",
+            delay: .5,
+            onComplete: scaleDownAndFadeIn
+        })
+
+        function scaleDownAndFadeIn() {
+            gsap.to('img', {
+                scale: 1,
+                duration: 2
+            })
+            /*gsap.to('p', {
+                opacity: 1,
+                y: 50,
+                stagger: .3,
+                duration: 2
+            })*/
+            gsap.fromTo('p', {
+                y:-50,
+                letterSpacing: '.3em'
+            }, {
+                opacity: 1,
+                y: 50,
+                letterSpacing: '0em',
+                stagger: .3,
+                duration: 2
+            })
+        }
+
+    </script>
+</body>
+</html>

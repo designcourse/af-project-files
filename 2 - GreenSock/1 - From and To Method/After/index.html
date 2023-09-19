@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <h1>BORING</h1>
+    <div class="progress"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        gsap.to(".progress", {
+                //duration: 1,
+                width: "100%",
+                //ease: "power1.inOut",
+                //delay: 0.5
+        })
+
+        gsap.from("h1", {
+            y: -200,
+            duration: 2,
+            ease: "elastic.out(1, 0.3)"
+        })
+
+        gsap.to(".progress", {
+                duration: 1,
+                height: "100%",
+                top: 0,
+                backgroundColor: 'white',
+                width: "100%",
+                ease: "power1.inOut",
+                delay: 2
+        })
+    </script>
+</body>
+</html>

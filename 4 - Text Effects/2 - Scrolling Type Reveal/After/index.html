@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Type</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <section>
+        <span>001</span>
+        <p>UI/UX design is crucial for user satisfaction as it ensures the application is intuitive, easy-to-navigate, and accessible, ultimately leading to a higher user retention rate and positive user experience.</p>
+        <img src="1.png" alt="supporting image">
+    </section>
+    <section>
+        <span>002</span>
+        <p>Good UI/UX design enhances a brand's perception by ensuring a consistent and visually appealing interface, which in turn, builds trust and credibility with its users.</p>
+        <img src="2.png" alt="supporting image">
+    </section>
+    <section>
+        <span>003</span>
+        <p>Well-designed UI/UX helps in improving the overall usability of the application, making it easier for users to complete tasks efficiently and effectively, thus contributing to higher conversion rates.</p>
+        <img src="3.jpg" alt="supporting image">
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script>
+
+        const texts = gsap.utils.toArray('section p')
+
+        texts.forEach(text => {
+
+            const img = text.nextElementSibling;
+            const splitType = new SplitType(text)
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: text,
+                    start: 'top 80%',
+                    end: 'bottom 50%',
+                    //scrub: 2,
+                    toggleActions: 'play play none reverse'
+                    // markers: true
+                }
+            })
+
+            tl.from(splitType.chars, {
+                
+                duration: 1,
+                y: 50,
+                opacity: 0,
+                stagger: 0.005,
+                ease: 'power2.out'
+            })
+
+            tl.from(img, {
+
+                opacity: 0,
+                y:100,
+                duration: 2
+            }, "<")
+
+        })
+
+        // smooth scroll
+
+        const lenis = new Lenis()
+
+        function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+            
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    height: 100vh;
+    color: white;
+}
+
+.mask {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.fade-container {
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: 1fr;
+    height: 100vh;
+}
+
+.fade1, .fade2, .fade3 {
+    //transform: scaleY(0);
+    transform-origin: top;
+}
+
+.fade1 {
+    background-color: #C9D6EA;
+}
+.fade2 {
+    background-color: #5E9EFF;
+}
+.fade3 {
+    background-color: #2C80FF;
+}
+
+h1 {
+    margin: 0;
+    font-size: 8rem;
+    font-weight: 900;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -.08em;
+    z-index: 1;
+    //transform: translateX(-100%);
+}

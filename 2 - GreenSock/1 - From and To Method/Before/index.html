@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From and To</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <h1>BORING</h1>
+    <div class="progress"></div>
+
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        const progress = document.querySelector(".progress")
+        
+        gsap.to(progress, {
+            width: "100%",
+            duration: 2,
+            ease: "power4.out"
+        })
+
+        gsap.from("h1", {
+            y: -200,
+            duration: 2,
+            ease: "elastic.out(1, 0.3)"
+        })
+
+        gsap.to(progress, {
+            height: "100%",
+            top: 0,
+            delay: 2,
+            backgroundColor: "white"
+        })
+
+    </script>
+</body>
+</html>

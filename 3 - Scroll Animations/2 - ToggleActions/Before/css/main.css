@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #AECABC;
+  font-family: "Darker Grotesque", sans-serif;
+}
+
+section {
+  height: 100vh;
+}
+section:nth-of-type(1) {
+  background: #e4f0ea;
+}
+
+.mask {
+  overflow: hidden;
+  height: auto;
+}
+
+.h2 {
+  margin-top: 10em;
+}
+
+section.middle {
+  padding: 5em;
+  display: flex;
+  align-items: flex-start;
+  height: calc(100vh - 16em);
+}
+section.middle > * {
+  flex: 1;
+}
+
+h2 {
+  font-size: clamp(5rem, 5vw, 10rem);
+  letter-spacing: -0.2rem;
+  margin: 0;
+  align-self: center;
+}
+
+.card {
+  position: relative;
+  align-self: center;
+}
+.card .box {
+  background: #C3D7CD;
+  position: absolute;
+  right: 20%;
+  top: 4em;
+  width: 200px;
+  height: 13em;
+  border-radius: 0.3em;
+  z-index: -1;
+}
+.card h3 {
+  margin: 2.5em 0 0;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 400;
+  line-height: 2rem;
+}
+.card p {
+  width: 70%;
+  font-size: clamp(0.85rem, 5vw, 1rem);
+  line-height: 1rem;
+}
+
+.card1 h3, .card1 p {
+  text-align: right;
+  float: right;
+}
+
+.card1 {
+  margin-top: -15em;
+}
+
+.card2 {
+  margin-top: 10em;
+}
+.card2 .box {
+  right: 0;
+  left: 20%;
+}/*# sourceMappingURL=main.css.map */

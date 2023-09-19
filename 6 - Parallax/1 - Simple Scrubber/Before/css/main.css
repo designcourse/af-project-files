@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+section {
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4em;
+}
+section img {
+  width: 300px;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section svg {
+  position: fixed;
+  width: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.st0 {
+  stroke-dasharray: 470;
+  stroke-dashoffset: 470;
+}/*# sourceMappingURL=main.css.map */

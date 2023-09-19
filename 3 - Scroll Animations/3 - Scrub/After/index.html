@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <section></section>
+    <section class="primary">
+        <aside>
+            <div class="mask">
+                <h1>diabolical</h1>
+            </div>
+            <div class="mask">
+                <p>process</p>
+            </div>
+        </aside>
+        <main>
+            <div class="mask">
+                <p>
+                    The processes utilized in our next-gen system are diabolical in nature. 
+                    What does this mean? You’ll have to find out.
+                </p>
+            </div>
+        </main>
+
+        <div class="line"></div>
+        <span>diabolical</span>
+    </section>
+    <section style="height: 120vh"></section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script> 
+    <script>
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.primary',
+                start: 'top 20%',
+                bottom: 'bottom center',
+                toggleActions: 'play reverse restart reverse',
+                //pin: true,
+            },
+            defaults: {
+                ease: 'power3.out',
+                duration: 1
+            }
+        })
+
+        const scrubTl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.primary',
+                start: 'top 30%',
+                bottom: '40% top',
+                scrub: 2,
+                markers: false
+            }
+        })
+
+        tl
+            .from('h1', {
+                yPercent: 100
+            })
+            .from('aside p', {
+                yPercent: 140
+            }, "-=.8")
+            .from('main p', {
+                yPercent: 210,
+                opacity: 0
+            }, "-=1")
+        
+        scrubTl
+            .from('.line', {
+                scaleY: 0
+            })
+            .to('span', {
+                x: 0,
+                xPercent: 0
+            }, "<")
+
+
+            const lenis = new Lenis()
+
+        lenis.on('scroll', (e) => {
+
+        })
+
+        function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+
+    </script>
+</body>
+</html>

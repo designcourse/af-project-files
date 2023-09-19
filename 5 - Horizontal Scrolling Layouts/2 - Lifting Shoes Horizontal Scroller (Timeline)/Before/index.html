@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Type</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <a href="#" class="logo">FitShoes</a>
+
+    <div class="progress">
+        <div class="inner"></div>
+    </div>
+
+    <div class="slider">
+        <section>
+            <main>
+                <div class="content">
+                    <div class="mask">
+                        <h1>Lifting Soles X100</h1>
+                    </div>
+
+                    <p>
+                        Unveiling the ultimate in footwear for weightlifters: shoes that empower your lift, cradle your feet, and demonstrate unparalleled durability. Engineered with the precision of champions, 
+                            our shoes are the perfect fusion of advanced technology and timeless design, ensuring you achieve peak performance every time.
+                    </p>
+                </div>
+            </main>
+            <div class="right-col"></div>
+            <img src="shoe1.png" alt="Lifting Shoe X100">
+        </section>
+        <section data-bg-color="white">
+            <main>
+                <div class="content">
+                    <div class="mask">
+                        <h1>Lifting Soles X200</h1>
+                    </div>
+
+                    <p>
+                        Unveiling the ultimate in footwear for weightlifters: shoes that empower your lift, cradle your feet, and demonstrate unparalleled durability. Engineered with the precision of champions, 
+                            our shoes are the perfect fusion of advanced technology and timeless design, ensuring you achieve peak performance every time.
+                    </p>
+                </div>
+            </main>
+            <div class="right-col red"></div>
+            <img src="shoe2.png" alt="Lifting Shoe X200">
+        </section>
+        <section data-bg-color="#E9E9E9">
+            <main>
+                <div class="content">
+                    <div class="mask">
+                        <h1>Lifting Soles X300</h1>
+                    </div>
+
+                    <p>
+                        Unveiling the ultimate in footwear for weightlifters: shoes that empower your lift, cradle your feet, and demonstrate unparalleled durability. Engineered with the precision of champions, 
+                            our shoes are the perfect fusion of advanced technology and timeless design, ensuring you achieve peak performance every time.
+                    </p>
+                </div>
+            </main>
+            <div class="right-col dark"></div>
+            <img src="shoe3.png" alt="Lifting Shoe X300">
+        </section>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+
+    <script>
+
+        const slider = document.querySelector('.slider')
+        const sections = gsap.utils.toArray(".slider section") 
+
+
+        // smooth scroll
+
+        const lenis = new Lenis()
+
+        function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+
+    </script>
+</body>
+</html>

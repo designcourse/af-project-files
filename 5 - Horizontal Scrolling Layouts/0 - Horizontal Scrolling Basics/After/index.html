@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scroll</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <section style="background-color: purple">
+        <h3>hi</h3>
+    </section>
+    
+    <div class="outer">
+        <div class="scroll">
+            <section>
+                <h1>How are you today?</h1>
+            </section>
+            <section>
+                <h1 class="animateMe">I'm fine, you?</h1>
+            </section>
+            <section>
+                <h1>Great! Thanks for asking.</h1>
+            </section>
+        </div>
+    </div>
+
+    <section>
+        <h3>bye</h3>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    
+    <script>
+
+        let scroller = document.querySelector(".scroll");
+        let sections = gsap.utils.toArray(".scroll section");
+        let titles = gsap.utils.toArray('h1')
+
+        let testMath = -100 * (sections.length - 1)
+        console.log(testMath)
+
+        let scrollTween = gsap.to(sections, {
+            xPercent: -100 * (sections.length - 1),
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".scroll",
+                pin: true,
+                scrub: 1,
+                snap: 1 / (sections.length - 1),
+                // base vertical scrolling on how wide the container is so it feels more natural.
+                end: () => "+=" + document.querySelector(".scroll").offsetWidth
+            }
+        })
+
+        sections.forEach(section => {
+            gsap.from(section.querySelector('h1'), {
+                opacity: 0,
+                y: -100,
+                scrollTrigger: {
+                    containerAnimation: scrollTween,
+                    trigger: section.querySelector('h1'),
+                    start: 'left center',
+                    //scrub: 1,
+                    markers: true,
+                    toggleActions: 'play none none reverse'
+                }
+            })
+        })
+        
+
+        // smooth scroll
+
+        const lenis = new Lenis()
+
+        function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+
+    </script>
+</body>
+</html>
