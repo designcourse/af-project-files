@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #11161F;
+  color: white;
+}
+
+.mask {
+  overflow: hidden;
+}
+
+.outer {
+  overflow-x: hidden;
+}
+
+.slider {
+  display: flex;
+  width: 300vw;
+}
+
+section {
+  height: 100vh;
+  width: 100%;
+}
+section .inner {
+  margin: 7em;
+  position: relative;
+  display: flex;
+  height: calc(100% - 14em);
+  align-items: end;
+}
+section .inner h1 {
+  text-transform: uppercase;
+}
+section .inner img {
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+section .inner .content {
+  justify-self: flex-end;
+}
+section .inner .content p {
+  width: 50%;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.fish-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+.fish-container img {
+  position: absolute;
+  opacity: 0.1;
+  transform: scale(0.3) rotate(10deg);
+}
+.fish-container img:nth-of-type(1) {
+  top: 10%;
+  left: 60%;
+  transform: scale(0.6) rotate(10deg);
+}
+.fish-container img:nth-of-type(2) {
+  top: 80%;
+  left: 40%;
+}
+.fish-container img:nth-of-type(3) {
+  top: 60%;
+  left: 90%;
+}
+.fish-container img:nth-of-type(4) {
+  top: 70%;
+  left: 5%;
+}
+.fish-container img:nth-of-type(5) {
+  top: 20%;
+  left: 15%;
+  transform: scale(0.7) rotate(10deg);
+}
+.fish-container img:nth-of-type(6) {
+  top: 40%;
+  left: 80%;
+}
+.fish-container img:nth-of-type(7) {
+  top: 63%;
+  left: 67%;
+}
+.fish-container img:nth-of-type(8) {
+  top: 7%;
+  left: 26%;
+  transform: scale(0.8) rotate(10deg);
+}
+.fish-container img:nth-of-type(9) {
+  top: 16%;
+  left: 92%;
+}
+.fish-container img:nth-of-type(10) {
+  top: 53%;
+  left: 44%;
+}/*# sourceMappingURL=main.css.map */
