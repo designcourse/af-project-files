@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #11161F;
+  color: white;
+}
+
+h1 {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-size: 6rem;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+}
+
+section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+section img {
+  width: 100%;
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+section img.bg {
+  top: 0;
+  height: 100%;
+  transform: translate(-50%, 0%);
+}
+section img.middle-bg {
+  bottom: 20%;
+  height: 100%;
+  transform: translate(-50%, -20%);
+}
+section img.cupcake {
+  bottom: 30vh;
+  transform: translate(-50%, -20%);
+  width: 60%;
+  z-index: 3;
+}
+
+.mask {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  bottom: 0;
+}/*# sourceMappingURL=main.css.map */
