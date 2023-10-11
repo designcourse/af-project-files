@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  color: black;
+}
+
+section {
+  height: 100vh;
+  position: relative;
+  display: grid;
+  place-content: center;
+}
+section h1 {
+  font-size: clamp(2rem, 10vw, 5rem);
+  letter-spacing: clamp(1rem, 5vw, 3rem);
+}
+section img {
+  position: absolute;
+  z-index: -1;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 11%;
+}
+section img:nth-of-type(1) {
+  top: 20%;
+  left: 40%;
+}
+section img:nth-of-type(2) {
+  top: 30%;
+  left: 48%;
+  z-index: 1;
+}
+section img:nth-of-type(3) {
+  top: 34%;
+  left: 10%;
+}
+section img:nth-of-type(4) {
+  top: 40%;
+  left: 80%;
+}/*# sourceMappingURL=main.css.map */
