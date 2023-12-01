@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background: #E6E6E6;
+    display: grid;
+    place-content: center;
+}
+
+.mask {
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    gap: 2em;
+
+    .card {
+        background: white;
+        border-radius: .3em;
+        padding: 2em;
+        display: flex;
+        flex-direction:column;
+        justify-content: space-between;
+        height: 300px;
+
+        h1 {
+            margin: 0;
+            font-size: 2.4rem;
+        }
+
+        .exit {
+            display: none;
+        }
+
+
+    }
+}
+
+section {
+    padding-top: 2em;
+    height: 50vh;
+
+
+
+    p {
+        font-size: 1.2rem;
+        margin-top: 2em;
+        line-height: 1.5em;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 4rem;
+        width: 70%;
+    }
+
+    .exit {
+        display: block;
+    }
+
+    .see {
+        display: none;
+    }
+}

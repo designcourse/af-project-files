@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonkers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <section></section>
+    <main>
+        <div class="content">
+            <h1 class="target">We're about to transition.</h1>
+            <p class="target">Into a fascinating world of frontend development and motion design.</p>
+        </div>
+    </main>
+    <section class="primary">
+        
+    </section>
+    <section></section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script> 
+
+    <script>
+
+        gsap.registerPlugin(Flip) 
+
+        const primary = document.querySelector('.primary'),
+              main = gsap.utils.toArray('.target')
+
+        gsap.set('p', {
+            opacity: 0
+        })
+
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: 'main',
+                start: "top center",
+                markers: true,
+                onEnter: () => transfer()
+            }
+        })
+        tl.to('p', {
+            opacity: 1
+        })
+        tl.pause()
+        
+        
+        function transfer() {
+            const state = Flip.getState(main, { props: 'fontSize'});
+
+            main.forEach(el => {
+                primary.appendChild(el);
+            });
+
+            Flip.from(state, {
+                duration: 2,
+                ease: "power2.inOut",
+            });
+
+            tl.play()
+        } 
+        
+        
+
+
+        // Smooth Scroll
+        const lenis = new Lenis()
+
+        function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+        
+
+    </script>
+</body>
+</html>

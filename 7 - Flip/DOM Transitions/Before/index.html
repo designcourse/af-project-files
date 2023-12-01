@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonkers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300,700&family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <section>
+
+    </section>
+    <main>
+        <div class="card">
+            <h1>Scenic Forestry Brings Them Together.</h1>
+            <div class="mask">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit nemo nam ipsum natus consequatur officia praesentium molestiae magnam blanditiis illum.</p>
+            </div>
+            <a class="see" href="#">
+                <img src="vision.svg" alt="Eye icon">
+                <span>See why</span>
+            </a>
+            <a class="exit" href="#">
+                <img src="vision.svg" alt="Exit">
+                <span>Close</span>
+            </a>
+        </div>
+        <div class="card">
+            <h1>Enjoy a Night Out in the Woods.</h1>
+            <div class="mask">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit nemo nam ipsum natus consequatur officia praesentium molestiae magnam blanditiis illum.</p>
+            </div>
+            <a class="see" href="#">
+                <img src="vision.svg" alt="Eye icon">
+                <span>See why</span>
+            </a>
+            <a class="exit" href="#">
+                <img src="vision.svg" alt="Exit">
+                <span>Close</span>
+            </a>
+        </div>
+        <div class="card">
+            <h1>Relax with Scenic Breathtaking Views.</h1>
+            <div class="mask">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit nemo nam ipsum natus consequatur officia praesentium molestiae magnam blanditiis illum.</p>
+            </div>
+            <a class="see" href="#">
+                <img src="vision.svg" alt="Eye icon">
+                <span>See why</span>
+            </a>
+            <a class="exit" href="#">
+                <img src="vision.svg" alt="Exit">
+                <span>Close</span>
+            </a>
+        </div>
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script> 
+
+    <script>
+
+        gsap.registerPlugin(Flip) 
+
+        const cards = gsap.utils.toArray('.card')
+        const main = document.querySelector('main')
+        const feature = document.querySelector('section')
+        const exit = document.querySelector('.exit')
+
+        let moveFeature = false
+
+        cards.forEach(card => {
+            const description = new SplitType(card.querySelector('p'))
+
+            gsap.set(description.chars, {
+                opacity: 0
+            })
+
+            card.querySelector('.see').addEventListener('click', (e) => {
+
+                const state = Flip.getState(cards, {props: 'fontSize' })
+
+
+                if (feature.childElementCount == 1) {
+                    moveFeature = true
+                    transferCard(e.target.closest('.card'), description, moveFeature)
+                    console.log('hehe '+e.target.parentElement)
+                } 
+
+                if (feature.childElementCount == 0) {
+                    feature.appendChild(card);
+                }
+                
+
+
+                Flip.from(state, {
+                    duration: 1,
+                    ease: 'power4.out',
+                    absolute: true
+                })
+
+                gsap.to(description.chars, {
+                    duration: .3,
+                    opacity: 1,
+                    yPercent: -50,
+                    stagger: 0.01,
+                    ease: 'power4.out'
+                })
+
+
+
+            })
+
+            card.querySelector('.exit').addEventListener('click', (e) => {
+                
+                
+                transferCard(e.target.closest('.card'), description, moveFeature)
+                
+
+            });
+
+        })
+
+        function transferCard(targetCard,description,moveFeature) {
+            
+            //targetCard.stopPropagation(); // Prevents the click from bubbling up to the card's click event
+                
+                const cardState = Flip.getState(cards, {  })
+                console.log(targetCard)
+
+                if (targetCard) {
+                    
+                    gsap.to(description.chars, {
+                        duration: .3,
+                        opacity: 0,
+                        yPercent: 0,
+                        ease: 'power4.out'
+                    })
+
+                    // If we have the card, append it back to the main element
+                    main.appendChild(feature.firstElementChild);
+                    console.log(feature.firstElementChild)
+
+                    if (moveFeature) {
+                        feature.appendChild(targetCard)
+                    }
+
+
+                }
+        }
+
+
+
+        // Smooth Scroll
+        const lenis = new Lenis()
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+        
+
+    </script>
+</body>
+</html>

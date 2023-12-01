@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+  background: #E6E6E6;
+  display: grid;
+  place-content: center;
+}
+
+.mask {
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  gap: 2em;
+}
+main .card {
+  background: white;
+  border-radius: 0.3em;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 300px;
+}
+main .card h1 {
+  margin: 0;
+  font-size: 2.4rem;
+}
+main .card .exit {
+  display: none;
+}
+
+section {
+  padding-top: 2em;
+  height: 50vh;
+}
+section p {
+  font-size: 1.2rem;
+  margin-top: 2em;
+  line-height: 1.5em;
+}
+section h1 {
+  margin: 0;
+  font-size: 4rem;
+  width: 70%;
+}
+section .exit {
+  display: block;
+}
+section .see {
+  display: none;
+}/*# sourceMappingURL=main.css.map */
