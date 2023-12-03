@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  height: 100vh;
+  place-content: center;
+  background: #7000FF;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  height: 100vh;
+  cursor: pointer;
+}
+main .left, main .right {
+  display: grid;
+  place-content: center;
+  width: 50%;
+  height: 100vh;
+}
+main .left {
+  background: #131313;
+}
+main .emoticon {
+  width: 300px;
+  height: 300px;
+  background: #7000FF;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+main .emoticon .eyes {
+  display: flex;
+  gap: 4em;
+  margin-top: 30px;
+}
+main .emoticon .eyes .eye {
+  background: #131313;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+main .emoticon .mouth {
+  margin: 2em 0 0 0.5em;
+  stroke: #131313;
+}
+main .right .emoticon {
+  background: #131313;
+  border-radius: 1em;
+}
+main .right .emoticon .eye {
+  background: #7000FF;
+}
+main .right .emoticon .mouth {
+  stroke: #7000FF;
+  transform: rotate(180deg);
+}/*# sourceMappingURL=main.css.map */

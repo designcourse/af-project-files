@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonkers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bayon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <main>
+        <div class="left">
+            <div class="emoticon">
+                <div class="eyes">
+                    <div class="eye"></div>
+                    <div class="eye"></div>
+                </div>
+                <svg class="mouth" width="78" height="27" viewBox="0 0 78 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.24414 21.7535C17.1118 9.34649 47.2124 -8.02339 72.6738 21.7535" stroke-width="10" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+        <div class="right">
+
+        </div>
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
+
+    <script>
+        const clickable = document.querySelector('main')
+        const left = document.querySelector('.left')
+        const right = document.querySelector('.right')
+        const emoticon = document.querySelector('.emoticon')
+        let happy = false
+
+        gsap.registerPlugin(Flip)
+
+        clickable.addEventListener('click', () => {
+
+            flipEmoticon(happy)
+
+        })
+
+        function flipEmoticon(happyState) {
+            const state = Flip.getState(emoticon, {props: 'background,borderRadius'})
+            
+            if (happy) {
+                left.appendChild(emoticon)
+                happy = false
+            } else {
+                right.appendChild(emoticon)
+                happy = true
+            }
+            Flip.from(state, {
+                    duration: 1,
+                    ease: 'power4.out',
+            })
+        }
+
+
+    </script>
+</body>
+</html>
