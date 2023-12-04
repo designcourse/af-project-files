@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: #F4F0D0;
+    font-family: 'Poppins';
+}
+
+main {
+    max-width: 1200px;
+    margin: 5em auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    font-weight: bold;
+    align-self: end;
+    cursor: pointer;
+}
+
+.cards {
+    display: flex;
+    gap: 1em;
+
+    .card {
+        background: white;
+        padding: 2em;
+        border-radius: .3em;
+
+        img {
+            width: 100%;
+        }
+        h2 {
+            margin: 1em 0 0;
+            font-size: 1em;
+        }
+        p {
+            margin: 0;
+            font-size: .85em;
+        }
+    }
+}
+
+.sort {
+    flex-direction: column;
+
+    .card {
+        display: flex;
+        gap: 2em;
+
+        img {
+            width: 200px;
+        }
+
+        h2 {
+            margin: 0;
+        }
+    }
+}

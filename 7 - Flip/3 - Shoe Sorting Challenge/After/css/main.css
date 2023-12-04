@@ -1,0 +1,59 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: #F4F0D0;
+  font-family: "Poppins";
+}
+
+main {
+  max-width: 1200px;
+  margin: 5em auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  font-weight: bold;
+  align-self: end;
+  cursor: pointer;
+}
+
+.cards {
+  display: flex;
+  gap: 1em;
+}
+.cards .card {
+  background: white;
+  padding: 2em;
+  border-radius: 0.3em;
+}
+.cards .card img {
+  width: 100%;
+}
+.cards .card h2 {
+  margin: 1em 0 0;
+  font-size: 1em;
+}
+.cards .card p {
+  margin: 0;
+  font-size: 0.85em;
+}
+
+.sort {
+  flex-direction: column;
+}
+.sort .card {
+  display: flex;
+  gap: 2em;
+}
+.sort .card img {
+  width: 200px;
+}
+.sort .card h2 {
+  margin: 0;
+}/*# sourceMappingURL=main.css.map */
