@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Split Type</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <section>
+        <h1>UI/UX &amp; Frontend</h1>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script>
+
+        // split type
+        const text = new SplitType('h1')
+
+        const tl = gsap.timeline({defaults:{ ease: 'power4.inOut' }})
+
+
+        gsap.set('h1', { autoAlpha: 1})
+
+        tl.from(text.chars, {
+            y: 40,
+            opacity: 0,
+            skewX: 30,
+            stagger: .03,
+            duration: 1
+        })
+        .to(text.chars, {
+            y: -40,
+            opacity: 0,
+            skewX: -10,
+            duration: 1,
+            stagger: .03
+        })
+
+        // smooth scroll
+
+        const lenis = new Lenis()
+
+        function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
+            
+        
+
+
+    </script>
+</body>
+</html>
