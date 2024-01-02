@@ -1,0 +1,21 @@
+{
+  "name": "ringston",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.0.0"
+  },
+  "dependencies": {
+    "@studio-freight/lenis": "^1.0.33",
+    "dat.gui": "^0.7.9",
+    "gsap": "^3.12.4",
+    "split-type": "^0.3.4",
+    "three": "^0.160.0"
+  }
+}
